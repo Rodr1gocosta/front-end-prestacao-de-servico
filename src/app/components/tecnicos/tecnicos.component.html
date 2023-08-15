@@ -1,0 +1,92 @@
+<mat-card class="mat-card-fieldset">
+    <mat-card-header>
+        <div class="mat-card-title-wrapper">
+            <mat-card-title class="custom-title">Técnicos</mat-card-title>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-card class="mat-card-fieldset">
+            <form class="form">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Nome</mat-label>
+                        <input matInput placeholder="Ex. Pesquisar por nome">
+                    </mat-form-field>
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>CPF</mat-label>
+                        <input matInput placeholder="Ex. Pesquisar por CPF">
+                    </mat-form-field>
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Telefone</mat-label>
+                        <input matInput placeholder="Ex. Pesquisar por telefone">
+                    </mat-form-field>
+                    <mat-form-field class="mat-form-field">
+                        <mat-label>Ativo</mat-label>
+                        <input matInput placeholder="Ex. Pesquisar por ativo">
+                    </mat-form-field>
+                </div>
+            </form>
+
+            <mat-card-content class="mat-card-content d-flex flex-sm-column">
+                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start">
+                    <button class="button mb-2" mat-raised-button color="primary">Pesquisar</button>
+                    <button class="button mb-2" mat-raised-button color="primary">Novo</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+        <div class="container mat-table-responsive">
+            <div class="table-wrapper">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="nome">
+                        <th mat-header-cell *matHeaderCellDef> Nome </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="cpf">
+                        <th mat-header-cell *matHeaderCellDef> CPF </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cpf}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="telefone">
+                        <th mat-header-cell *matHeaderCellDef> Telefone </th>
+                        <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+                    </ng-container>
+
+                    <!-- <ng-container matColumnDef="endereco">
+                    <th mat-header-cell *matHeaderCellDef> Endereço </th>
+                    <td mat-cell *matCellDef="let element"> {{element.endereco}} </td>
+                    </ng-container> -->
+
+                    <ng-container matColumnDef="acao">
+                        <th mat-header-cell *matHeaderCellDef> Ações </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button style="margin: 2px" mat-mini-fab matTooltip="Editar" color="primary"
+                                routerLink="update/{{ element.id }}">
+                                <i class="fa fa-solid fa-pen"></i>
+                            </button>
+                            <button mat-mini-fab matTooltip="Deletar" color="warn" routerLink="delete/{{ element.id }}">
+                                <i class="fa fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row (click)="clickedRows.add(row)" [class.demo-row-is-clicked]="clickedRows.has(row)"
+                        *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

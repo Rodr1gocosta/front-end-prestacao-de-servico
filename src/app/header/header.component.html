@@ -1,0 +1,44 @@
+<mat-toolbar class="header mat-elevation-z8">
+    <div class="mat-toolbar-row">
+      <h1>Logo</h1>
+      <span class="flex-spacer"></span> <!-- Adicione essa linha para criar um espaço flexível -->
+      
+      <button mat-button [matMenuTriggerFor]="menu">
+        <i style="font-size: 20px;" class="fal fa-user"></i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          Controle
+        </button>
+        <button mat-menu-item>
+          Pesquisa
+        </button>
+        <button mat-menu-item>
+          Submenu 3
+        </button>
+      </mat-menu>
+  
+      <button mat-button [matMenuTriggerFor]="menu">
+        <i style="font-size: 20px;" class="fal fa-calendar"></i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          Controle
+        </button>
+      </mat-menu>
+  
+      <button mat-button [matMenuTriggerFor]="menu">
+        <i style="font-size: 20px;" class="fal fa-bell"></i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          Controle
+        </button>
+      </mat-menu>
+  
+      <button mat-button>
+          <i style="font-size: 20px;" class="fal fa-share-square" (click)="logout()"></i>
+      </button>
+  
+    </div>
+  </mat-toolbar>
