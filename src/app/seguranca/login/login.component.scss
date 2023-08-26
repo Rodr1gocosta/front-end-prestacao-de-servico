@@ -1,16 +1,44 @@
+.telaLogin {
+    display: grid; 
+    // place-items: center; 
+    height: 100vh; 
+    background-image: url('../../../assets/images/Wallpaper.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+
 .container{
-    background-color: rgba(0, 0, 0, 0.582);
-    width: 20%;
+    background-image: url('../../../assets/images/login.jpeg');
+    width: 56%;
+    height: 62%;
     margin: auto;
     padding: 1rem 1rem;
-    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
     border-radius: 5px;
+    position: relative;
+    overflow: hidden;
 }
-  
+
+.form {
+    position: absolute;
+    width: 40%;
+    height: 100%; 
+    background-color: rgba(34, 34, 34, 0.863);
+    top: 0;
+    left: 0;
+}
+
 .full-width {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
-.button-margin-top {
-    margin-top: 15px;
+.mat-form-field {
+    width: 80%;
+}
+
+button {
+    width: 80%;
+    margin-bottom: 0.2rem;
 }

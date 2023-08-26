@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -78,7 +79,8 @@ import { AuthInterceptor } from './seguranca/interceptor/auth-interceptor';
     MatDialogModule,
     MatTooltipModule,
     MatMenuModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCheckboxModule
   ],
   providers: [
     {
