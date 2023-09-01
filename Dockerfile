@@ -1,4 +1,4 @@
-FROM node:latest as Angular
+FROM node:14.20 as Angular
 WORKDIR /app
 COPY package.json /app
 RUN npm install
