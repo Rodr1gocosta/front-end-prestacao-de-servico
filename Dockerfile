@@ -1,6 +1,10 @@
-FROM node:14.20 as Angular
+FROM node:14 as Angular
 WORKDIR /app
 COPY package.json /app
+
+# Limpar o cache do npm
+RUN npm cache clean --force
+
 RUN npm install
 COPY . .
 RUN npm run build
